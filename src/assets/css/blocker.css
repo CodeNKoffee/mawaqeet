@@ -1,0 +1,277 @@
+.blocker {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 7vh 8vw 5vh;
+}
+
+/* No focus rings on blocker buttons (a focused window was drawing a square
+   outline around Emergency exit on the secondary monitor). Keep the
+   passphrase field's focus ring for accessibility. */
+.blocker button:focus,
+.blocker button:focus-visible,
+.exit-link:focus,
+.exit-link:focus-visible,
+.hold-btn:focus {
+  outline: none;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- lock-screen clock ---- */
+.lock-top {
+  text-shadow: 0 2px 22px rgba(4, 12, 26, 0.55);
+}
+.lock-date {
+  font-family: var(--sans);
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-dim);
+  margin-bottom: 0.7rem;
+}
+.lock-time {
+  font-family: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", var(--sans);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.lock-hijri {
+  font-family: var(--quran);
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: var(--gold-soft);
+  margin-top: 0.3rem;
+}
+
+/* ---- center: reminder + verse ---- */
+.lock-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 64rem;
+}
+.title {
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.8rem;
+}
+.title-ar {
+  font-family: var(--quran);
+  font-weight: 400;
+  color: var(--gold-soft);
+}
+
+.arabic {
+  font-family: var(--quran);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 2.3;
+  color: var(--ink);
+  margin-bottom: 1.3rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
+}
+.quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 44rem;
+  margin-bottom: 0.8rem;
+}
+.ref {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  color: var(--gold-soft);
+}
+
+/* ---- bottom: focus status + exit ---- */
+.lock-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.focus-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.focus-line .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(240, 192, 104, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(240, 192, 104, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(240, 192, 104, 0); }
+}
+.exit-area {
+  min-height: 22px;
+}
+.exit-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+.exit-link:hover {
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ===== emergency modal ===== */
+.overlay-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 20, 38, 0.62);
+  backdrop-filter: blur(8px);
+}
+.overlay-modal[hidden] {
+  display: none;
+}
+.modal-card {
+  width: min(420px, 86vw);
+  background: rgba(17, 33, 58, 0.94);
+  border: 1px solid var(--panel-line);
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.modal-card h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.modal-sub {
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+.hold-btn {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--panel-line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+.hold-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(240, 192, 104, 0.5), rgba(240, 192, 104, 0.78));
+  transition: width 0.06s linear;
+}
+.hold-label {
+  position: relative;
+  z-index: 1;
+}
+.pass-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid var(--panel-line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+  font-size: 1rem;
+  padding: 0 14px;
+  margin-bottom: 16px;
+  outline: none;
+  user-select: text;
+  cursor: text;
+}
+.pass-input:disabled {
+  opacity: 0.4;
+}
+.pass-input:focus {
+  border-color: var(--gold);
+}
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border: 1px solid var(--panel-line);
+  font-family: var(--sans);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.btn.solid {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #2a1c00;
+  font-weight: 600;
+}
+.btn.solid:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.modal-err {
+  margin-top: 12px;
+  color: #ff9d9d;
+  font-size: 0.85rem;
+}
+.shake {
+  animation: shake 0.4s;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+.fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

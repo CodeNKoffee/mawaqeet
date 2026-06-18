@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing",
+      "runtimeExecutable": "/Users/hatem/.nvm/versions/node/v20.20.2/bin/node",
+      "runtimeArgs": ["scripts/serve-landing.mjs"],
+      "port": 5050
+    },
+    {
+      "name": "app",
+      "runtimeExecutable": "/Users/hatem/.nvm/versions/node/v20.20.2/bin/node",
+      "runtimeArgs": ["scripts/serve-src.mjs"],
+      "port": 5051
+    }
+  ]
+}

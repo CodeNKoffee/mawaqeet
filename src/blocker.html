@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mawaqeet</title>
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/blocker.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+
+    <main class="blocker" id="blocker">
+      <!-- lock-screen style clock -->
+      <header class="lock-top">
+        <div class="lock-date" id="lockDate"></div>
+        <div class="lock-time" id="clock">--:--</div>
+        <div class="lock-hijri" id="lockHijri"></div>
+      </header>
+
+      <section class="lock-center">
+        <h1 class="title">It's time for <span class="title-ar" id="titleAr">الظهر</span></h1>
+
+        <p class="arabic" id="arabic" dir="rtl" lang="ar"></p>
+        <p class="quote" id="quote"></p>
+        <p class="ref" id="ref"></p>
+      </section>
+
+      <footer class="lock-bottom">
+        <div class="focus-line">
+          <span class="dot"></span>
+          <span id="countdown">Focus mode</span>
+        </div>
+        <div class="exit-area" id="exitArea"></div>
+      </footer>
+    </main>
+
+    <!-- Emergency unlock (strict mode) -->
+    <div class="overlay-modal" id="unlockModal" hidden>
+      <div class="modal-card">
+        <h2>Emergency exit</h2>
+        <p class="modal-sub">
+          This is meant for genuine emergencies. Your exit is logged.
+          Hold the button, then enter your passphrase.
+        </p>
+        <button class="hold-btn" id="holdBtn">
+          <span class="hold-fill" id="holdFill"></span>
+          <span class="hold-label">Hold to confirm</span>
+        </button>
+        <input
+          type="password"
+          id="passInput"
+          class="pass-input"
+          placeholder="Passphrase"
+          autocomplete="off"
+          disabled
+        />
+        <div class="modal-actions">
+          <button class="btn ghost" id="cancelUnlock">Stay &amp; pray</button>
+          <button class="btn solid" id="confirmUnlock" disabled>Unlock</button>
+        </div>
+        <p class="modal-err" id="unlockErr" hidden>Wrong passphrase.</p>
+      </div>
+    </div>
+
+    <script src="js/blocker.js"></script>
+  </body>
+</html>

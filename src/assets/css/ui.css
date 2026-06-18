@@ -1,0 +1,228 @@
+/* ===== Custom form controls (no native UI) ===== */
+
+/* --- Select --- */
+.cs {
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
+}
+.cs-trigger {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 12px;
+  border-radius: 11px;
+  border: 1px solid var(--panel-line);
+  background: var(--field-bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.cs-trigger:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.cs.open .cs-trigger {
+  border-color: var(--gold);
+}
+.cs-caret {
+  color: var(--gold-soft);
+  font-size: 0.7rem;
+  transition: transform 0.18s;
+}
+.cs.open .cs-caret {
+  transform: rotate(180deg);
+}
+.cs-menu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow: auto;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(14, 28, 50, 0.97);
+  border: 1px solid var(--panel-line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+}
+.cs-menu[hidden] {
+  display: none;
+}
+.cs-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 11px;
+  border: none;
+  background: none;
+  color: var(--ink);
+  font-size: 0.92rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cs-opt:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cs-opt.sel {
+  background: rgba(240, 192, 104, 0.18);
+  color: var(--gold-soft);
+}
+
+/* --- Time picker (three selects) --- */
+.tp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tp .cs {
+  min-width: 72px;
+}
+.tp .cs.ampm {
+  min-width: 78px;
+}
+.tp-sep {
+  color: var(--ink-dim);
+  font-weight: 700;
+}
+
+/* --- Date picker --- */
+.dp {
+  position: relative;
+  display: inline-block;
+}
+.dp-trigger {
+  height: 42px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 12px;
+  border-radius: 11px;
+  border: 1px solid var(--panel-line);
+  background: var(--field-bg);
+  color: var(--ink);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.dp-trigger:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.dp-trigger .cal-ico {
+  color: var(--gold-soft);
+}
+.cal {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 280px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(14, 28, 50, 0.98);
+  border: 1px solid var(--panel-line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+}
+.cal[hidden] {
+  display: none;
+}
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cal-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.cal-nav {
+  display: flex;
+  gap: 6px;
+}
+.cal-nav button {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--panel-line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.cal-nav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-dow {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  padding: 4px 0;
+}
+.cal-day {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  color: var(--ink);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.cal-day:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.cal-day.dim {
+  color: var(--ink-faint);
+  opacity: 0.4;
+}
+.cal-day.today {
+  outline: 1px solid rgba(240, 192, 104, 0.5);
+}
+.cal-day.sel {
+  background: var(--gold);
+  color: #2a1c00;
+  font-weight: 700;
+}
+
+/* --- Number stepper --- */
+.num {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--panel-line);
+  border-radius: 11px;
+  background: var(--field-bg);
+  overflow: hidden;
+  height: 42px;
+}
+.num button {
+  width: 38px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--gold-soft);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.num button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.num .num-val {
+  min-width: 52px;
+  text-align: center;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}

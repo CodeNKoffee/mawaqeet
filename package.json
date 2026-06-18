@@ -1,0 +1,70 @@
+{
+  "name": "mawaqeet",
+  "version": "0.1.0",
+  "description": "Mawaqeet — prayer times with a focus-mode screen blocker so work never delays salah.",
+  "author": "Hatem Soliman",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://codenkoffee.github.io/mawaqeet/",
+  "repository": "github:CodeNKoffee/mawaqeet",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "node scripts/patch-adhan.mjs",
+    "fetch:verses": "node scripts/fetch-verses.mjs",
+    "dev": "electron . --dev",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.mawaqeet.app",
+    "productName": "Mawaqeet",
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "data/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.lifestyle",
+      "artifactName": "${productName}-${version}-macOS-universal.${ext}",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": "universal"
+        },
+        {
+          "target": "zip",
+          "arch": "universal"
+        }
+      ]
+    },
+    "dmg": {
+      "title": "Mawaqeet ${version}",
+      "contents": [
+        { "x": 140, "y": 210, "type": "file" },
+        { "x": 400, "y": 210, "type": "link", "path": "/Applications" }
+      ]
+    },
+    "win": {
+      "artifactName": "${productName}-${version}-Windows-x64.${ext}",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    }
+  },
+  "dependencies": {
+    "adhan": "^4.4.3",
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}

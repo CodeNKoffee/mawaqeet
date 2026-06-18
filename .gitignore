@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+npm-debug.log*
+
+# build intermediates (keep icon.icns/.png/.svg + tray.svg)
+build/icon.iconset/
+build/*.svg.png
+
+# release binaries are published via GitHub Releases, never committed
+landing/downloads/
+*.zip
+*.dmg
+*.exe
+*.AppImage
+*.deb

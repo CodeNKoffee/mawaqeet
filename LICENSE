@@ -1,0 +1,65 @@
+Mawaqeet — End User License Agreement (EULA)
+Copyright © 2026 Hatem Soliman (Mawaqeet). All rights reserved.
+
+This is a commercial software product made available free of charge.
+"Software" means the Mawaqeet application, its source code, assets, and
+accompanying materials.
+
+1. GRANT OF LICENSE
+   You are granted a personal, non-exclusive, non-transferable, revocable
+   license to download, install, and use the Software on devices you own or
+   control, at no cost, for personal and commercial use.
+
+2. RESTRICTIONS
+   Except where permitted by applicable law, you may NOT:
+   (a) sell, sublicense, rent, lease, or otherwise commercially redistribute
+       the Software or charge others for access to it;
+   (b) modify, adapt, reverse engineer, decompile, or create derivative
+       works of the Software for redistribution;
+   (c) remove or alter any proprietary notices, branding, or this license;
+   (d) represent the Software, or any derivative, as your own product.
+
+   Personal modification for your own use, and inspection of the source for
+   learning or security review, are permitted.
+
+3. UPDATES & PAID FEATURES
+   The core Software is and will remain free to use. Optional paid features
+   or services may be offered in the future under separate terms.
+
+4. RELIGIOUS CONTENT
+   Qur'anic text is reproduced from the public-domain Uthmani text with the
+   Sahih International English translation. While care is taken to present it
+   accurately, you are responsible for verifying prayer times and religious
+   content against a trusted local authority. The Software is an aid, not a
+   substitute for scholarly guidance.
+
+5. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+6. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR
+   OTHERWISE, ARISING FROM OR IN CONNECTION WITH THE SOFTWARE OR ITS USE,
+   INCLUDING ANY MISSED PRAYER, MISSED EVENT, OR DATA LOSS.
+
+7. TERMINATION
+   This license terminates automatically if you breach its terms. Upon
+   termination you must cease use and remove all copies.
+
+---------------------------------------------------------------------------
+THIRD-PARTY COMPONENTS (used under their own licenses):
+
+  • Electron — MIT License
+  • adhan-js (prayer-time calculations) — MIT License
+  • Amiri Quran & Playfair Display fonts — SIL Open Font License 1.1
+  • Qur'an Uthmani text — public domain; English: Sahih International
+    (text retrieved via alquran.cloud)
+
+These components remain governed by their respective licenses, which take
+precedence over this EULA for those components.
+
+---------------------------------------------------------------------------
+This EULA is a starting template, not legal advice. Have it reviewed by a
+qualified attorney before commercial distribution.

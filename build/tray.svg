@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 44 44">
+  <g fill="#000000">
+    <!-- crescent (outer disc minus offset disc, even-odd) -->
+    <path fill-rule="evenodd" d="
+      M19 6 a16 16 0 1 0 0 32 a16 16 0 1 0 0 -32 Z
+      M26 3 a15 15 0 1 1 0 30 a15 15 0 1 1 0 -30 Z" />
+    <!-- 8-point star nestled in the opening -->
+    <g transform="translate(30 14)">
+      <rect x="-5" y="-5" width="10" height="10" rx="1" />
+      <rect x="-5" y="-5" width="10" height="10" rx="1" transform="rotate(45)" />
+    </g>
+  </g>
+</svg>

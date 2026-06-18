@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mawaqeet</title>
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+
+    <div class="drag-strip"></div>
+
+    <main class="dash" id="dash">
+      <header class="topbar">
+        <div class="wordmark">Mawaqeet<span class="ar">مواقيت</span></div>
+        <button class="gear" id="gear" title="Settings">⚙</button>
+      </header>
+
+      <!-- No-location prompt -->
+      <section class="setup" id="setup" hidden>
+        <svg class="dome" width="48" height="48" viewBox="0 0 64 64" fill="currentColor">
+          <path d="M20 33 C20 22 24 12 32 10 C40 12 44 22 44 33 Z" />
+          <rect x="19" y="33" width="26" height="5" rx="1.5" />
+          <rect x="16" y="38" width="32" height="4" rx="1.5" />
+        </svg>
+        <h2>Set your location</h2>
+        <p class="muted">Prayer times are calculated for where you are.</p>
+        <button class="btn-primary" id="detectBtn">Detect automatically</button>
+        <div class="search-wrap">
+          <input id="cityInput" placeholder="…or search a city" autocomplete="off" />
+          <div class="results" id="cityResults"></div>
+        </div>
+      </section>
+
+      <!-- Main content -->
+      <section class="content" id="content" hidden>
+        <div class="loc-row">
+          <span id="locText">—</span>
+          <span class="hijri" id="hijriText"></span>
+        </div>
+
+        <div class="hero">
+          <div class="hero-label">NEXT PRAYER</div>
+          <div class="hero-name">
+            <span id="nextName" class="serif">—</span>
+            <span id="nextAr" class="hero-ar"></span>
+          </div>
+          <div class="hero-count" id="nextCount">--:--:--</div>
+          <div class="hero-at" id="nextAt"></div>
+        </div>
+
+        <div class="banner" id="eventBanner" hidden></div>
+
+        <ul class="times" id="timesList"></ul>
+
+        <footer class="dashfoot">
+          <div class="focus-state" id="focusState">Focus mode: on</div>
+          <button class="link-btn" id="previewBtn">Preview blocker</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

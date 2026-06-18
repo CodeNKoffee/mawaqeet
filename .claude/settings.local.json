@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//opt/homebrew/opt/node@20/**)",
+      "Bash(/opt/homebrew/opt/node@20/bin/node -v)",
+      "Bash(curl -s \"http://api.alquran.cloud/v1/ayah/29:45/editions/quran-uthmani\")",
+      "Bash(python3 -c \"import sys,json; print\\(json.load\\(sys.stdin\\)['data']['text']\\)\")",
+      "Bash(brew --prefix node@20)",
+      "Bash(brew list *)",
+      "Bash(grep -E \"bin/\\(node|npm\\)$\")",
+      "Bash(echo \"=== brew output tail ===\" ; tail -15 /private/tmp/claude-501/-Users-hatem-Desktop-Entrepreneur-Career-Startups-Mawaqeet/40f529e6-76b1-4f82-b71c-fc1bc3c9eaeb/tasks/b1tskfau1.output 2>/dev/null ; echo \"=== nvm node versions ===\" ; ls /Users/hatem/.nvm/versions/node/ 2>/dev/null)"
+    ]
+  }
+}

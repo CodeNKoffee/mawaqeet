@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mawaqeet — Settings</title>
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/ui.css" />
+    <link rel="stylesheet" href="assets/css/settings.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <div class="drag-strip"></div>
+
+    <main class="settings">
+      <h1 class="page-title on-backdrop">Settings</h1>
+
+      <!-- Location -->
+      <section class="card glass">
+        <h2>Location</h2>
+        <div class="cur-loc" id="curLoc">—</div>
+        <div class="row">
+          <button class="btn ghost" id="detectBtn">Re-detect</button>
+        </div>
+        <div class="search-wrap">
+          <input id="cityInput" placeholder="Search a city…" autocomplete="off" />
+          <div class="results" id="cityResults"></div>
+        </div>
+      </section>
+
+      <!-- Calculation -->
+      <section class="card glass">
+        <h2>Calculation</h2>
+        <div class="field">
+          <span>Method</span>
+          <div id="methodMount"></div>
+        </div>
+        <div class="field">
+          <span>Asr (juristic school)</span>
+          <div id="madhabMount"></div>
+        </div>
+      </section>
+
+      <!-- Focus blocker -->
+      <section class="card glass">
+        <h2>Focus blocker</h2>
+        <label class="switch-row">
+          <span>Enable screen blocker</span>
+          <input type="checkbox" id="blockerEnabled" class="switch" />
+        </label>
+        <div class="field">
+          <span>Block duration (minutes)</span>
+          <div id="durationMount"></div>
+        </div>
+        <div class="field">
+          <span>Grace delay after azaan (seconds)</span>
+          <div id="delayMount"></div>
+        </div>
+        <div class="field col">
+          <span>Strictness</span>
+          <div class="pillcol" id="strictness">
+            <button type="button" class="pill" data-value="strict">Strict + emergency unlock</button>
+            <button type="button" class="pill" data-value="hard">Hard block (no escape)</button>
+            <button type="button" class="pill" data-value="soft">Soft reminder (dismissible)</button>
+          </div>
+        </div>
+        <div class="field col" id="passField">
+          <span>Emergency passphrase</span>
+          <input type="text" id="passphrase" autocomplete="off" placeholder="e.g. bismillah" />
+          <p class="hint" style="margin: 8px 0 0">
+            Shown only in <strong>Strict</strong> mode. To exit the blocker early in a real
+            emergency, click “Emergency exit”, hold the button, then type this phrase.
+            Every use is logged. Default is <strong>bismillah</strong> — change it to anything you like.
+          </p>
+        </div>
+        <label class="switch-row">
+          <span>Show a Qur'an verse (Arabic &amp; English)</span>
+          <input type="checkbox" id="showVerse" class="switch" />
+        </label>
+        <button class="btn ghost wide" id="previewBtn">Preview blocker (1 min)</button>
+      </section>
+
+      <!-- Which prayers -->
+      <section class="card glass">
+        <h2>Blocker applies to</h2>
+        <div class="prayer-toggles" id="prayerToggles"></div>
+      </section>
+
+      <!-- Notifications -->
+      <section class="card glass">
+        <h2>Notifications</h2>
+        <label class="switch-row">
+          <span>Azaan notification at prayer time</span>
+          <input type="checkbox" id="azaan" class="switch" />
+        </label>
+        <div class="field">
+          <span>Pre-reminder (minutes before, 0 = off)</span>
+          <div id="preMount"></div>
+        </div>
+      </section>
+
+      <!-- Meetings / interviews -->
+      <section class="card glass">
+        <h2>Meetings &amp; interviews</h2>
+        <p class="hint">
+          During an event the blocker is paused. If a prayer falls inside it,
+          the screen blocks the moment the event ends — so you pray right after.
+        </p>
+        <label class="switch-row">
+          <span>Block right after an event ends</span>
+          <input type="checkbox" id="deferAfter" class="switch" />
+        </label>
+
+        <div class="events" id="eventsList"></div>
+
+        <div class="add-event">
+          <input id="evTitle" placeholder="Title (e.g. Client interview)" />
+          <div class="seg" id="evType">
+            <button type="button" data-type="once" class="active">One-time</button>
+            <button type="button" data-type="recurring">Recurring</button>
+          </div>
+
+          <div id="onceFields">
+            <div class="field"><span>Date</span><div id="evDateMount"></div></div>
+            <div class="field"><span>From</span><div id="evStartMount"></div></div>
+            <div class="field"><span>To</span><div id="evEndMount"></div></div>
+          </div>
+
+          <div id="recurFields" hidden>
+            <div class="field col"><span>Days</span><div class="days" id="evDays"></div></div>
+            <div class="field"><span>From</span><div id="evRStartMount"></div></div>
+            <div class="field"><span>To</span><div id="evREndMount"></div></div>
+          </div>
+
+          <button class="btn solid wide" id="addEvBtn">Add event</button>
+        </div>
+      </section>
+
+      <!-- General -->
+      <section class="card glass">
+        <h2>General</h2>
+        <div class="field">
+          <span>Time format</span>
+          <div id="timeFormatMount"></div>
+        </div>
+        <label class="switch-row">
+          <span>Launch at login</span>
+          <input type="checkbox" id="launchLogin" class="switch" />
+        </label>
+        <div class="row end">
+          <button class="btn danger wide" id="quitBtn">Quit Mawaqeet</button>
+        </div>
+      </section>
+
+      <p class="src-note" id="srcNote"></p>
+    </main>
+
+    <script src="js/ui.js"></script>
+    <script src="js/settings.js"></script>
+  </body>
+</html>

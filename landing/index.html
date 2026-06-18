@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Mawaqeet — Prayer times with a focus-mode screen blocker for macOS</title>
+    <meta name="description" content="Mawaqeet is a free macOS app that sounds the azaan and gently blocks your screen at prayer time, so work never delays your salah. Windows & Linux in progress." />
+    <meta name="author" content="Hatem Soliman" />
+    <link rel="canonical" href="https://mawaqeet.app/" />
+    <meta name="theme-color" content="#1b3a63" />
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mawaqeet" />
+    <meta property="og:title" content="Mawaqeet — prayer that work can't push aside" />
+    <meta property="og:description" content="A free macOS app that sounds the azaan and gently takes over your screen at prayer time." />
+    <meta property="og:url" content="https://mawaqeet.app/" />
+    <meta property="og:image" content="assets/shots/blocker.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mawaqeet — prayer that work can't push aside" />
+    <meta name="twitter:description" content="A free macOS app that sounds the azaan and gently blocks your screen at prayer time." />
+    <meta name="twitter:image" content="assets/shots/blocker.png" />
+
+    <!-- Structured data: free software application -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Mawaqeet",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "macOS",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "A prayer-times app with a focus-mode screen blocker that gently takes over your screen at prayer time so work never delays your salah."
+      }
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/landing.css" />
+  </head>
+  <body>
+    <div class="lp-bg"></div>
+
+    <nav class="lp-nav">
+      <a class="lp-logo" href="#top">
+        <img src="assets/icon.png" alt="Mawaqeet" width="32" height="32" />
+        <span>Mawaqeet<span class="ar">مواقيت</span></span>
+      </a>
+      <div class="lp-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn solid sm" href="#download">Download</a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="top">
+      <div class="eyebrow">Free · for macOS</div>
+      <h1>Prayer that work<br /><span class="grad">can't push aside.</span></h1>
+      <p class="lede">
+        Mawaqeet sounds the azaan, then quietly takes over your screen — so when
+        it's time to pray, you stand up and pray. Not "in five minutes."
+      </p>
+      <div class="dl" id="download-top">
+        <a class="btn solid lg" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-macOS-universal.dmg"><span class="apple"></span> Download for macOS</a>
+        <div class="soon">v0.1.0 · Windows &amp; Linux in progress · iPhone, iPad &amp; Android planned</div>
+      </div>
+
+      <div class="hero-shot">
+        <figure class="device wide">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="assets/shots/blocker.png" alt="Mawaqeet focus-mode blocker showing the prayer time, a Qur'an verse and the clock" loading="lazy" />
+        </figure>
+      </div>
+    </header>
+
+    <!-- Split 1: dashboard -->
+    <section class="split" id="features">
+      <div class="split-copy">
+        <h2>Always knows what's next.</h2>
+        <p>
+          Accurate prayer times for exactly where you are, with a live countdown
+          to the next prayer right in your menu bar. Pick your calculation
+          method and Asr school — or let it choose for your location.
+        </p>
+      </div>
+      <figure class="device tall glow-gold">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="assets/shots/dashboard.png" alt="Mawaqeet dashboard with today's prayer times and a countdown to the next prayer" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- Split 2: settings -->
+    <section class="split reverse">
+      <div class="split-copy">
+        <h2>Tuned exactly to you.</h2>
+        <p>
+          Choose which prayers block your screen and for how long. Strict, hard,
+          or soft. Add interviews and recurring meetings that shouldn't be
+          interrupted — Mawaqeet waits, then blocks the moment they end.
+        </p>
+      </div>
+      <figure class="device tall">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="assets/shots/settings.png" alt="Mawaqeet settings: location, calculation method, blocker strictness and meetings" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="features-grid">
+      <h2 class="section-h">Quietly firm. Never childish.</h2>
+      <div class="grid">
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-location-dot"></i></span>
+          <h3>Accurate to your spot</h3>
+          <p>Auto-detects your city and uses the standard authority for that place — Shafi'i or Hanafi Asr.</p>
+        </article>
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-lock"></i></span>
+          <h3>Focus-mode blocker</h3>
+          <p>At the azaan, every screen becomes a calm reminder for a set time. Strict, hard, or soft.</p>
+        </article>
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-calendar-check"></i></span>
+          <h3>Meeting-aware</h3>
+          <p>In an interview or recurring meeting? It pauses, then blocks the instant the event ends.</p>
+        </article>
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-book-quran"></i></span>
+          <h3>Verified Qur'an</h3>
+          <p>Authentic Uthmani script with Sahih International, surah name &amp; Juz', in Amiri Quran.</p>
+        </article>
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-key"></i></span>
+          <h3>Emergency unlock</h3>
+          <p>A deliberate, logged passphrase exit for genuine emergencies — easy enough, hard enough.</p>
+        </article>
+        <article class="feature">
+          <span class="ic"><i class="fa-solid fa-display"></i></span>
+          <h3>Every screen</h3>
+          <p>Covers all your monitors at once — plug in a second display mid-prayer and it's covered too.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why (scripture anchor) — opt-in -->
+    <section class="why">
+      <button class="why-toggle" id="verseToggle" aria-expanded="false" aria-controls="verseBody">
+        <span>Read the verse behind Mawaqeet</span>
+        <span class="chev" aria-hidden="true">›</span>
+      </button>
+      <div class="why-body" id="verseBody">
+        <div class="why-inner">
+          <p class="why-ar" dir="rtl" lang="ar">رِجَالٌۭ لَّا تُلْهِيهِمْ تِجَٰرَةٌۭ وَلَا بَيْعٌ عَن ذِكْرِ ٱللَّهِ وَإِقَامِ ٱلصَّلَوٰةِ</p>
+          <p class="why-en">“…men whom neither commerce nor sale distracts from the remembrance of Allah and the establishment of prayer.”</p>
+          <p class="why-ref">سُورَةُ النُّورِ · An-Nūr 24:37 · Juz 18</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How -->
+    <section class="how" id="how">
+      <h2 class="section-h">Three steps. Then forget about it.</h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><p>Set your location once.</p></div>
+        <div class="step"><span class="n">2</span><p>Pick which prayers block, and for how long.</p></div>
+        <div class="step"><span class="n">3</span><p>Add any meetings that shouldn't be interrupted.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <h2 class="section-h">Questions</h2>
+      <div class="qa"><h4>Which platforms are supported?</h4><p><strong>macOS today.</strong> Windows &amp; Linux builds are in progress; iPhone, iPad and Android are planned. The hard screen-blocker is a desktop capability.</p></div>
+      <div class="qa"><h4>Is it really free?</h4><p>Yes — free to download and use. Optional paid extras may come later, but the core stays free.</p></div>
+      <div class="qa"><h4>Will it block the screen on iPhone?</h4><p>Apple doesn't allow an app to lock the screen over others on iOS/iPadOS, so on mobile you'll get full-screen reminders and notifications instead.</p></div>
+    </section>
+
+    <!-- Download / versions -->
+    <section class="download" id="download">
+      <h2>Download Mawaqeet</h2>
+      <p class="dl-sub">Free, forever at the core.</p>
+      <div class="dl-grid">
+        <div class="dl-card">
+          <div class="dl-os"><i class="fa-brands fa-apple"></i> macOS</div>
+          <div class="dl-ver">Latest · v0.1.0 · Universal (Silicon + Intel)</div>
+          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-macOS-universal.dmg">Download .dmg</a>
+          <a class="dl-all" href="downloads.html">All versions ↗</a>
+        </div>
+        <div class="dl-card">
+          <div class="dl-os"><i class="fa-brands fa-windows"></i> Windows</div>
+          <div class="dl-ver">v0.1.0 · x64 installer</div>
+          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-Windows-x64.exe">Download .exe</a>
+          <a class="dl-all" href="downloads.html">All versions ↗</a>
+        </div>
+        <div class="dl-card soon-card">
+          <div class="dl-os"><i class="fa-brands fa-linux"></i> Linux</div>
+          <div class="dl-ver">Ubuntu · AppImage</div>
+          <a class="btn ghost" href="https://github.com/CodeNKoffee/mawaqeet/releases/latest">Releases ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="lp-foot">
+      <div class="lp-logo sm">
+        <img src="assets/icon.png" alt="" width="26" height="26" />
+        <span>Mawaqeet<span class="ar">مواقيت</span></span>
+      </div>
+      <p>© 2026 Mawaqeet · by Hatem Soliman · Free for everyone · Made to help you never miss salah.</p>
+    </footer>
+
+    <script src="assets/landing.js"></script>
+  </body>
+</html>
