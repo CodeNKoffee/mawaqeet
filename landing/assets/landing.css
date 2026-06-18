@@ -223,8 +223,9 @@ body {
 .dl-card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
 .dl-card.soon-card { opacity: 0.75; }
 .dl-os { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-.dl-ver { font-size: 0.82rem; color: var(--ink-faint); }
-.dl-card .btn { margin-top: 6px; }
+.dl-ver { font-size: 0.82rem; color: var(--ink-faint); min-height: 2.6em; display: flex; align-items: center; justify-content: center; text-align: center; }
+.dl-card .btn { margin-top: 6px; min-width: 168px; }
+.dl-card .btn.ghost { background: var(--panel); }
 .dl-all { font-size: 0.82rem; color: var(--gold-soft); text-decoration: none; }
 .dl-all:hover { text-decoration: underline; }
 
@@ -248,6 +249,8 @@ body {
 
 /* footer */
 .lp-foot { border-top: 1px solid var(--line); text-align: center; padding: 40px 20px; color: var(--ink-faint); }
+.lp-foot a { color: var(--gold-soft); text-decoration: none; }
+.lp-foot a:hover { text-decoration: underline; }
 .lp-foot .lp-logo { justify-content: center; margin-bottom: 10px; font-size: 1.1rem; }
 .lp-foot p { font-size: 0.9rem; }
 

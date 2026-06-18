@@ -76,12 +76,15 @@ function buildWindow(display) {
     win.focus();
   });
 
-  // Re-assert dominance if the user manages to defocus it.
+  // Keep the cover on top WITHOUT stealing focus. Calling show()/focus() here
+  // started a focus war between the per-monitor windows, which made the
+  // Emergency-exit button unresponsive on multi-monitor setups. Re-asserting
+  // the always-on-top level is enough — the window stays visually on top while
+  // the clicked window keeps focus so its modal works.
   win.on("blur", () => {
     if (state && !state.ending && !win.isDestroyed()) {
       try {
         win.setAlwaysOnTop(true, "screen-saver");
-        win.show();
       } catch (_) {}
     }
   });
