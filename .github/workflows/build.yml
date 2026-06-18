@@ -39,9 +39,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y rpm fakeroot
       - run: npm install --no-audit --no-fund
       - name: Build
-        run: npm run ${{ matrix.cmd }}
+        # --publish never: electron-builder just builds; the release upload is
+        # handled by the softprops step below (avoids needing GH_TOKEN here).
+        run: npm run ${{ matrix.cmd }} -- --publish never
         env:
-          # Unsigned CI builds. Add signing secrets for public releases.
           CSC_IDENTITY_AUTODISCOVERY: "false"
       - uses: actions/upload-artifact@v4
         with:

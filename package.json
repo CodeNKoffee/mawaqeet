@@ -2,7 +2,10 @@
   "name": "mawaqeet",
   "version": "0.1.0",
   "description": "Mawaqeet — prayer times with a focus-mode screen blocker so work never delays salah.",
-  "author": "Hatem Soliman",
+  "author": {
+    "name": "Hatem Soliman",
+    "email": "hatem@hatemsoliman.dev"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://codenkoffee.github.io/mawaqeet/",
   "repository": "github:CodeNKoffee/mawaqeet",
