@@ -18,7 +18,7 @@ const defaults = {
     delaySec: 0, // grace period after azaan before the block engages
     strictness: "strict", // "strict" | "hard" | "soft"
     passphrase: "bismillah", // emergency unlock phrase (strict mode only)
-    showVerse: true, // show a Qur'an verse (Arabic + English) on the blocker
+    showVerse: false, // v0.1: verses off by default (toggle still available in Settings)
   },
 
   notifications: {
@@ -40,6 +40,7 @@ const defaults = {
     launchAtLogin: false,
     deferBlockerAfterEvent: true, // fire the missed block right after event ends
     use24h: false, // 24-hour vs 12-hour clock display
+    onboarded: false, // first-launch tip shown?
   },
 
   // Audit trail of emergency unlocks (keeps you honest).

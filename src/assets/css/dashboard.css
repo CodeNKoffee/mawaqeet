@@ -214,6 +214,51 @@ input {
   display: none;
 }
 
+/* first-launch onboarding */
+.onboard {
+  background: rgba(240, 192, 104, 0.14);
+  border: 1px solid rgba(240, 192, 104, 0.4);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.onboard-text {
+  font-size: 0.9rem;
+  color: var(--gold-soft);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+.onboard-text strong {
+  color: #fff;
+}
+.onboard-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-mini {
+  font-size: 0.82rem;
+  padding: 7px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--panel-line);
+  background: var(--field-bg);
+  color: var(--ink);
+  cursor: pointer;
+}
+.btn-mini.solid {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #2a1c00;
+  font-weight: 600;
+}
+.btn-mini.ghost {
+  background: transparent;
+  color: var(--ink-dim);
+}
+.btn-mini:hover {
+  filter: brightness(1.06);
+}
+
 .times {
   list-style: none;
   flex: 1;

@@ -39,7 +39,7 @@
       ]
     },
     "dmg": {
-      "title": "Mawaqeet ${version}",
+      "title": "Mawaqeet",
       "contents": [
         { "x": 140, "y": 210, "type": "file" },
         { "x": 400, "y": 210, "type": "link", "path": "/Applications" }

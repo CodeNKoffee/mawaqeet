@@ -233,7 +233,16 @@ body {
 .dlp-hero { max-width: 1000px; margin: 0 auto; text-align: center; padding: clamp(48px, 9vh, 90px) clamp(20px, 5vw, 64px) 0; }
 .dlp-hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.4rem); margin-bottom: 8px; }
 .dl-note { font-size: 0.76rem; color: var(--ink-faint); margin-top: 4px; max-width: 16rem; }
-.versions { max-width: 1000px; margin: 0 auto; padding: clamp(50px, 9vh, 110px) clamp(20px, 5vw, 64px); }
+.mac-help { max-width: 760px; margin: 0 auto; padding: 10px clamp(20px, 5vw, 64px) 0; }
+.mac-help-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; backdrop-filter: blur(10px); }
+.mac-help-card h3 { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.mac-help-card h3 i { color: var(--gold-soft); }
+.mac-help-card p { color: var(--ink-dim); font-size: 0.96rem; line-height: 1.6; }
+.mac-help-card ol { margin: 12px 0 12px 1.1rem; color: var(--ink-dim); font-size: 0.96rem; line-height: 1.7; }
+.mac-help-card ol strong { color: var(--ink); }
+.mac-help-card .mac-help-tip { margin-top: 10px; font-size: 0.88rem; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 12px; }
+
+.versions { max-width: 1000px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 5vw, 64px); }
 .vtable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); backdrop-filter: blur(10px); }
 .vtable { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 .vtable th, .vtable td { text-align: center; padding: 14px 18px; border-bottom: 1px solid var(--line); }

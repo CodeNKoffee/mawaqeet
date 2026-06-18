@@ -315,9 +315,9 @@ if (!gotLock) {
 
     createTray();
 
-    // Show the dashboard on first run (no location yet) or in dev.
+    // Show the dashboard on first run (no location, not yet onboarded) or in dev.
     const s = store.getAll();
-    if (!s.location || isDev) createMainWindow();
+    if (!s.location || isDev || !s.general.onboarded) createMainWindow();
   });
 
   app.on("window-all-closed", (e) => {

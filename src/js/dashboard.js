@@ -28,6 +28,7 @@ function render() {
   $("content").hidden = false;
 
   use24h = !!(state.settings && state.settings.general && state.settings.general.use24h);
+  $("onboard").hidden = !!(state.settings && state.settings.general && state.settings.general.onboarded);
   const loc = state.location;
   $("locText").textContent = "📍 " + [loc.city, loc.country].filter(Boolean).join(", ");
   try {
@@ -127,6 +128,21 @@ function wireSetup() {
 function wire() {
   $("gear").addEventListener("click", () => window.mawaqeet.openSettings());
   $("previewBtn").addEventListener("click", () => window.mawaqeet.previewBlocker("dhuhr"));
+
+  // First-launch onboarding (Launch at login tip)
+  $("onboardEnable").addEventListener("click", async () => {
+    await window.mawaqeet.setSettings({ general: { launchAtLogin: true, onboarded: true } });
+    $("onboard").hidden = true;
+  });
+  $("onboardSettings").addEventListener("click", async () => {
+    window.mawaqeet.openSettings();
+    await window.mawaqeet.setSettings({ general: { onboarded: true } });
+    $("onboard").hidden = true;
+  });
+  $("onboardDismiss").addEventListener("click", async () => {
+    await window.mawaqeet.setSettings({ general: { onboarded: true } });
+    $("onboard").hidden = true;
+  });
   wireSetup();
   window.mawaqeet.onState((s) => {
     state = s;

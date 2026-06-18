@@ -37,7 +37,7 @@ jobs:
       - name: Install Linux packaging deps
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get update && sudo apt-get install -y rpm fakeroot
-      - run: npm ci
+      - run: npm install --no-audit --no-fund
       - name: Build
         run: npm run ${{ matrix.cmd }}
         env:
