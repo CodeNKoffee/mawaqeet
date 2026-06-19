@@ -241,6 +241,10 @@ body {
 .mac-help-card ol { margin: 12px 0 12px 1.1rem; color: var(--ink-dim); font-size: 0.96rem; line-height: 1.7; }
 .mac-help-card ol strong { color: var(--ink); }
 .mac-help-card .mac-help-tip { margin-top: 10px; font-size: 0.88rem; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 12px; }
+.gtk-card ul { margin: 6px 0 0; padding-left: 1.1rem; }
+.gtk-card li { color: var(--ink-dim); font-size: 0.96rem; line-height: 1.6; margin-bottom: 10px; }
+.gtk-card li strong { color: var(--ink); }
+.gtk-card code, .qa code { background: rgba(240,192,104,0.16); color: var(--gold-soft); border: 1px solid rgba(240,192,104,0.3); padding: 1px 8px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
 
 .versions { max-width: 1000px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 5vw, 64px); }
 .vtable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); backdrop-filter: blur(10px); }
