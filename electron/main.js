@@ -7,6 +7,7 @@ const {
   nativeImage,
   Notification,
   ipcMain,
+  shell,
 } = require("electron");
 const path = require("path");
 
@@ -25,6 +26,48 @@ const TRAY_ICON = path.join(__dirname, "..", "src", "assets", "trayTemplate.png"
 app.setName("Mawaqeet");
 if (process.platform === "darwin") {
   app.setAboutPanelOptions({ applicationName: "Mawaqeet" });
+}
+
+// ------------------------------------------------------- update checker ---
+// Lightweight, signing-independent: checks the latest GitHub release and, if
+// newer, notifies the user in-app with a Download link. (Full silent
+// auto-update via electron-updater can replace this once macOS is signed.)
+const REPO = "CodeNKoffee/mawaqeet";
+let updateInfo = null;
+
+function isNewerVersion(latestTag, current) {
+  const a = String(latestTag).replace(/^v/, "").split(".").map((n) => parseInt(n, 10) || 0);
+  const b = String(current).split(".").map((n) => parseInt(n, 10) || 0);
+  for (let i = 0; i < 3; i++) {
+    if ((a[i] || 0) > (b[i] || 0)) return true;
+    if ((a[i] || 0) < (b[i] || 0)) return false;
+  }
+  return false;
+}
+
+async function checkForUpdates() {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
+      headers: { "User-Agent": "Mawaqeet", Accept: "application/vnd.github+json" },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.tag_name && isNewerVersion(data.tag_name, app.getVersion())) {
+      updateInfo = {
+        available: true,
+        latest: String(data.tag_name).replace(/^v/, ""),
+        url: data.html_url || `https://github.com/${REPO}/releases/latest`,
+      };
+      pushState();
+      notify({
+        title: `Mawaqeet ${updateInfo.latest} is available`,
+        body: "Open Mawaqeet to download the update.",
+      });
+    }
+  } catch (_) {
+    /* offline / rate-limited — ignore silently */
+  }
 }
 
 let tray = null;
@@ -184,6 +227,7 @@ function notify({ title, body }) {
 
 function pushState() {
   const st = scheduler.getDayState();
+  st.update = updateInfo;
   for (const w of [mainWindow, settingsWindow]) {
     if (w && !w.isDestroyed()) w.webContents.send("state", st);
   }
@@ -210,7 +254,16 @@ async function ensureLocation() {
 // --------------------------------------------------------------- IPC API ---
 
 function registerIpc() {
-  ipcMain.handle("state:get", () => scheduler.getDayState());
+  ipcMain.handle("state:get", () => ({ ...scheduler.getDayState(), update: updateInfo }));
+
+  ipcMain.handle("app:openExternal", (_e, url) => {
+    if (
+      typeof url === "string" &&
+      /^https:\/\/(github\.com\/CodeNKoffee\/mawaqeet|codenkoffee\.github\.io\/mawaqeet)/.test(url)
+    ) {
+      shell.openExternal(url);
+    }
+  });
 
   ipcMain.handle("settings:get", () => store.getAll());
   ipcMain.handle("settings:set", (_e, patch) => {
@@ -314,6 +367,10 @@ if (!gotLock) {
     });
 
     createTray();
+
+    // Update checks: shortly after launch, then every 6 hours.
+    setTimeout(checkForUpdates, 5000);
+    setInterval(checkForUpdates, 6 * 60 * 60 * 1000);
 
     // Show the dashboard on first run (no location, not yet onboarded) or in dev.
     const s = store.getAll();

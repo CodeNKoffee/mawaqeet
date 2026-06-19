@@ -41,5 +41,6 @@ contextBridge.exposeInMainWorld("mawaqeet", {
 
   // ---- windows / app ----
   openSettings: () => ipcRenderer.invoke("window:settings"),
+  openExternal: (url) => ipcRenderer.invoke("app:openExternal", url),
   quit: () => ipcRenderer.invoke("app:quit"),
 });

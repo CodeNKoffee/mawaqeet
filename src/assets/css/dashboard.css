@@ -214,6 +214,24 @@ input {
   display: none;
 }
 
+/* update-available banner */
+.update-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(94, 178, 120, 0.16);
+  border: 1px solid rgba(94, 178, 120, 0.45);
+  border-radius: 12px;
+  padding: 10px 12px 10px 14px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  color: #cdeccf;
+}
+.update-banner[hidden] {
+  display: none;
+}
+
 /* first-launch onboarding */
 .onboard {
   background: rgba(240, 192, 104, 0.14);

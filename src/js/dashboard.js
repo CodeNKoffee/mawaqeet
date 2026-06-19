@@ -4,6 +4,7 @@ const ORDER = ["fajr", "sunrise", "dhuhr", "asr", "maghrib", "isha"];
 
 let state = null;
 let use24h = false;
+let updateUrl = null;
 
 function fmtTime(iso) {
   return new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", hour12: !use24h });
@@ -29,6 +30,14 @@ function render() {
 
   use24h = !!(state.settings && state.settings.general && state.settings.general.use24h);
   $("onboard").hidden = !!(state.settings && state.settings.general && state.settings.general.onboarded);
+
+  if (state.update && state.update.available) {
+    $("updateBanner").hidden = false;
+    $("updateText").textContent = `Mawaqeet ${state.update.latest} is available.`;
+    updateUrl = state.update.url;
+  } else {
+    $("updateBanner").hidden = true;
+  }
   const loc = state.location;
   $("locText").textContent = "📍 " + [loc.city, loc.country].filter(Boolean).join(", ");
   try {
@@ -128,6 +137,9 @@ function wireSetup() {
 function wire() {
   $("gear").addEventListener("click", () => window.mawaqeet.openSettings());
   $("previewBtn").addEventListener("click", () => window.mawaqeet.previewBlocker("dhuhr"));
+  $("updateBtn").addEventListener("click", () => {
+    if (updateUrl) window.mawaqeet.openExternal(updateUrl);
+  });
 
   // First-launch onboarding (Launch at login tip)
   $("onboardEnable").addEventListener("click", async () => {

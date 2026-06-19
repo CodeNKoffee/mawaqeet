@@ -19,7 +19,7 @@
     events: [
       { id: "ev1", title: "Client interview", type: "once", enabled: true, once: { startISO: iso(15, 0), endISO: iso(16, 0) } },
     ],
-    general: { launchAtLogin: false, deferBlockerAfterEvent: true, use24h: false },
+    general: { launchAtLogin: false, deferBlockerAfterEvent: true, use24h: false, onboarded: true },
   };
 
   const verse = {
