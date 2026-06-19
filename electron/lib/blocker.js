@@ -54,6 +54,9 @@ function buildWindow(display) {
     skipTaskbar: true,
     backgroundColor: "#16335c",
     hasShadow: false,
+    // Register clicks immediately on a non-focused (secondary) display so the
+    // Emergency-exit button works there too — dismissal clears ALL screens.
+    acceptFirstMouse: true,
     webPreferences: {
       preload: path.join(__dirname, "..", "preload.js"),
       contextIsolation: true,
