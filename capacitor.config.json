@@ -1,0 +1,12 @@
+{
+  "appId": "com.mawaqeet.app",
+  "appName": "Mawaqeet",
+  "webDir": "src",
+  "backgroundColor": "#16335c",
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon",
+      "iconColor": "#f0c068"
+    }
+  }
+}
