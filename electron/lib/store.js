@@ -17,7 +17,8 @@ const defaults = {
     durationMin: 15, // how long the screen stays blocked after azaan
     delaySec: 0, // grace period after azaan before the block engages
     strictness: "strict", // "strict" | "hard" | "soft"
-    passphrase: "bismillah", // emergency unlock phrase (strict mode only)
+    passphrase: "", // user's OWN emergency phrase (optional). A built-in backup
+    // ("mawaqeet") always works too — see blocker.emergencyUnlock.
     showVerse: false, // v0.1: verses off by default (toggle still available in Settings)
   },
 

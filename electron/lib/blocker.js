@@ -178,6 +178,10 @@ function dismiss() {
   return false;
 }
 
+// Built-in backup phrase that ALWAYS works, so no one is ever locked out even
+// if they never set their own. The user's custom phrase (if any) works too.
+const BACKUP_PASSPHRASE = "mawaqeet";
+
 function emergencyUnlock(passphrase, expected) {
   if (!state) return { ok: false, reason: "inactive" };
   if (state.strictness === "hard") return { ok: false, reason: "hard" };
@@ -185,7 +189,10 @@ function emergencyUnlock(passphrase, expected) {
     end("dismissed");
     return { ok: true };
   }
-  const ok = (passphrase || "").trim().toLowerCase() === (expected || "").trim().toLowerCase();
+  const norm = (s) => (s || "").trim().toLowerCase();
+  const input = norm(passphrase);
+  const custom = norm(expected);
+  const ok = input === BACKUP_PASSPHRASE || (!!custom && input === custom);
   if (ok) end("emergency");
   return { ok };
 }

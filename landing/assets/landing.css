@@ -122,6 +122,8 @@ body {
 .lede { font-size: 1.2rem; color: var(--ink-dim); max-width: 34rem; margin: 0 auto 30px; }
 .dl .soon, .soon { font-size: 0.86rem; color: var(--ink-faint); }
 .dl .soon { margin-top: 14px; }
+.soon a { color: var(--gold-soft); text-decoration: none; }
+.soon a:hover { text-decoration: underline; }
 
 /* device frames */
 .device {

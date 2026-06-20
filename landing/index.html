@@ -42,7 +42,7 @@
         "name": "Mawaqeet",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "macOS, Windows, Linux",
-        "softwareVersion": "0.1.0",
+        "softwareVersion": "0.1.1",
         "url": "https://codenkoffee.github.io/mawaqeet/",
         "downloadUrl": "https://github.com/CodeNKoffee/mawaqeet/releases/latest",
         "image": "https://codenkoffee.github.io/mawaqeet/assets/shots/blocker.png",
@@ -79,15 +79,19 @@
 
     <!-- Hero -->
     <header class="hero" id="top">
-      <div class="eyebrow">Free · for macOS</div>
+      <div class="eyebrow">Free · macOS · Windows · Linux</div>
       <h1>Prayer that work<br /><span class="grad">can't push aside.</span></h1>
       <p class="lede">
         Mawaqeet sounds the azaan, then quietly takes over your screen — so when
         it's time to pray, you stand up and pray. Not "in five minutes."
       </p>
       <div class="dl" id="download-top">
-        <a class="btn solid lg" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-macOS-universal.dmg"><span class="apple"></span> Download for macOS</a>
-        <div class="soon">v0.1.0 · Windows &amp; Linux in progress · iPhone, iPad &amp; Android planned</div>
+        <a class="btn solid lg" id="heroDl" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.1/Mawaqeet-0.1.1-macOS-universal.dmg">
+          <i class="fa-brands fa-apple" id="heroDlIcon"></i> <span id="heroDlText">Download for macOS</span>
+        </a>
+        <div class="soon">
+          v0.1.1 · <a href="downloads.html">all platforms &amp; versions ↗</a> · iPhone, iPad &amp; Android planned
+        </div>
       </div>
 
       <div class="hero-shot">
@@ -198,8 +202,8 @@
     <section class="faq" id="faq">
       <h2 class="section-h">Questions</h2>
       <div class="qa"><h4>Which platforms are supported?</h4><p><strong>macOS (Universal — Apple Silicon &amp; Intel), Windows and Linux</strong> are available now. iPhone, iPad and Android are planned. The hard screen-blocker is a desktop capability.</p></div>
-      <div class="qa"><h4>How do I exit the blocker in an emergency?</h4><p>In <em>Strict</em> mode, click <strong>Emergency exit</strong>, hold the button, then type the passphrase — the default is <code>bismillah</code> (changeable in Settings). Every use is logged. <em>Soft</em> mode is dismissible anytime; <em>Hard</em> mode has no escape until the timer ends.</p></div>
-      <div class="qa"><h4>Known issue (v0.1) — multiple monitors</h4><p>On multi-display setups the emergency-exit button can glitch and dismissing the blocker may not work reliably yet. A single display works as expected, and a fix is on the way.</p></div>
+      <div class="qa"><h4>How do I exit the blocker in an emergency?</h4><p>In <em>Strict</em> mode, click <strong>Emergency exit</strong>, hold the button, then type the passphrase. A built-in backup, <code>mawaqeet</code>, always works — and you can set <strong>your own</strong> in Settings (either one unlocks). Every use is logged. <em>Soft</em> mode is dismissible anytime; <em>Hard</em> mode has no escape until the timer ends.</p></div>
+      <div class="qa"><h4>Does it cover multiple monitors?</h4><p>Yes — the blocker covers every display at once (including a monitor you plug in mid-prayer), and the emergency exit / dismiss clears <strong>all</strong> screens together.</p></div>
       <div class="qa"><h4>Is it really free?</h4><p>Yes — free to download and use. Optional paid extras may come later, but the core stays free.</p></div>
       <div class="qa"><h4>Will it block the screen on iPhone?</h4><p>Apple doesn't allow an app to lock the screen over others on iOS/iPadOS, so on mobile you'll get full-screen reminders and notifications instead.</p></div>
     </section>
@@ -211,20 +215,20 @@
       <div class="dl-grid">
         <div class="dl-card">
           <div class="dl-os"><i class="fa-brands fa-apple"></i> macOS</div>
-          <div class="dl-ver">Latest · v0.1.0 · Universal (Silicon + Intel)</div>
-          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-macOS-universal.dmg">Download .dmg</a>
+          <div class="dl-ver">Latest · v0.1.1 · Universal (Silicon + Intel)</div>
+          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.1/Mawaqeet-0.1.1-macOS-universal.dmg">Download .dmg</a>
           <a class="dl-all" href="downloads.html">All versions ↗</a>
         </div>
         <div class="dl-card">
           <div class="dl-os"><i class="fa-brands fa-windows"></i> Windows</div>
-          <div class="dl-ver">v0.1.0 · x64 installer</div>
-          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0-Windows-x64.exe">Download .exe</a>
+          <div class="dl-ver">v0.1.1 · x64 installer</div>
+          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.1/Mawaqeet-0.1.1-Windows-x64.exe">Download .exe</a>
           <a class="dl-all" href="downloads.html">All versions ↗</a>
         </div>
         <div class="dl-card">
           <div class="dl-os"><i class="fa-brands fa-linux"></i> Linux</div>
           <div class="dl-ver">Ubuntu · AppImage</div>
-          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.0/Mawaqeet-0.1.0.AppImage">Download AppImage</a>
+          <a class="btn solid" href="https://github.com/CodeNKoffee/mawaqeet/releases/download/v0.1.1/Mawaqeet-0.1.1.AppImage">Download AppImage</a>
           <a class="dl-all" href="downloads.html">All versions ↗</a>
         </div>
       </div>
