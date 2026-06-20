@@ -31,6 +31,8 @@ function getInfo() {
     use24h: state.use24h,
     preview: !!state.preview,
     next: state.next || null,
+    showVerseArabic: !!state.showVerseArabic,
+    showVerseEnglish: !!state.showVerseEnglish,
   };
 }
 
@@ -109,7 +111,7 @@ function onDisplayChange() {
   coverAllDisplays();
 }
 
-function start({ prayerKey, prayerName, prayerArabic, verse, strictness, durationMs, use24h, preview, next }) {
+function start({ prayerKey, prayerName, prayerArabic, verse, strictness, durationMs, use24h, preview, next, showVerseArabic, showVerseEnglish }) {
   if (state) return getInfo();
 
   state = {
@@ -122,6 +124,8 @@ function start({ prayerKey, prayerName, prayerArabic, verse, strictness, duratio
     use24h: !!use24h,
     preview: !!preview,
     next: next || null,
+    showVerseArabic: !!showVerseArabic,
+    showVerseEnglish: !!showVerseEnglish,
     startedAt: Date.now(),
     windows: [],
     ending: false,

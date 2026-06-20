@@ -67,12 +67,15 @@ function fireBlocker(key) {
   }
 
   const disp = prayer.DISPLAY[key];
-  const verse = s.blocker.showVerse ? verses.pickForPrayer(key) : null;
+  const showAr = !!s.blocker.showVerseArabic;
+  const showEn = !!s.blocker.showVerseEnglish;
   deps.startBlocker({
     prayerKey: key,
     prayerName: disp.en,
     prayerArabic: disp.ar,
-    verse,
+    verse: showAr || showEn ? verses.pickForPrayer(key) : null,
+    showVerseArabic: showAr,
+    showVerseEnglish: showEn,
     strictness: s.blocker.strictness,
     durationMs: s.blocker.durationMin * 60 * 1000,
     use24h: s.general.use24h,
@@ -239,11 +242,15 @@ function preview(key = "dhuhr") {
     next = { name: n.name, arabic: n.arabic, iso: n.time.toISOString() };
   }
 
+  const showAr = !!s.blocker.showVerseArabic;
+  const showEn = !!s.blocker.showVerseEnglish;
   deps.startBlocker({
     prayerKey: key,
     prayerName: disp.en,
     prayerArabic: disp.ar,
-    verse: s.blocker.showVerse ? verses.pickForPrayer(key) : null,
+    verse: showAr || showEn ? verses.pickForPrayer(key) : null,
+    showVerseArabic: showAr,
+    showVerseEnglish: showEn,
     strictness: s.blocker.strictness,
     durationMs: 30 * 60 * 1000, // safety cap; preview is dismissible anytime
     use24h: s.general.use24h,

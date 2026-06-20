@@ -184,7 +184,8 @@ function populate() {
 
   $("blockerEnabled").checked = S.blocker.enabled;
   $("passphrase").value = S.blocker.passphrase;
-  $("showVerse").checked = S.blocker.showVerse;
+  $("showVerseArabic").checked = S.blocker.showVerseArabic;
+  $("showVerseEnglish").checked = S.blocker.showVerseEnglish;
   setStrictness(S.blocker.strictness);
 
   $("azaan").checked = S.notifications.azaan;
@@ -215,7 +216,8 @@ function wire() {
       })
     );
   $("passphrase").addEventListener("change", (e) => save({ blocker: { passphrase: e.target.value } }));
-  $("showVerse").addEventListener("change", (e) => save({ blocker: { showVerse: e.target.checked } }));
+  $("showVerseArabic").addEventListener("change", (e) => save({ blocker: { showVerseArabic: e.target.checked } }));
+  $("showVerseEnglish").addEventListener("change", (e) => save({ blocker: { showVerseEnglish: e.target.checked } }));
   $("previewBtn").addEventListener("click", () => window.mawaqeet.previewBlocker("dhuhr"));
 
   $("azaan").addEventListener("change", (e) => save({ notifications: { azaan: e.target.checked } }));

@@ -14,7 +14,7 @@
     location: { lat: 29.96, lng: 31.25, city: "Maadi", country: "Egypt", countryCode: "EG", source: "auto" },
     calc: { method: "auto", madhab: "shafi" },
     prayers: { fajr: true, dhuhr: true, asr: true, maghrib: true, isha: true },
-    blocker: { enabled: true, durationMin: 15, delaySec: 0, strictness: "strict", passphrase: "bismillah" },
+    blocker: { enabled: true, durationMin: 15, delaySec: 0, strictness: "strict", passphrase: "", showVerseArabic: false, showVerseEnglish: false },
     notifications: { azaan: true, preReminderMin: 10 },
     events: [
       { id: "ev1", title: "Client interview", type: "once", enabled: true, once: { startISO: iso(15, 0), endISO: iso(16, 0) } },

@@ -19,7 +19,10 @@ const defaults = {
     strictness: "strict", // "strict" | "hard" | "soft"
     passphrase: "", // user's OWN emergency phrase (optional). A built-in backup
     // ("mawaqeet") always works too — see blocker.emergencyUnlock.
-    showVerse: false, // v0.1: verses off by default (toggle still available in Settings)
+    // Qur'an verses are OFF by default (not rolled out until scholar-verified).
+    // Separate switches let users later show the Arabic, the English, or both.
+    showVerseArabic: false,
+    showVerseEnglish: false,
   },
 
   notifications: {

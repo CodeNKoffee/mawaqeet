@@ -183,15 +183,17 @@ async function init() {
   }
 
   const v = info.verse;
-  if (v) {
-    $("arabic").textContent = v.arabic;
-    $("quote").textContent = `“${v.english}”`;
+  const showAr = v && info.showVerseArabic;
+  const showEn = v && info.showVerseEnglish;
+  if (showAr) $("arabic").textContent = v.arabic;
+  else $("arabic").style.display = "none";
+  if (showEn) $("quote").textContent = `“${v.english}”`;
+  else $("quote").style.display = "none";
+  if (showAr || showEn) {
     $("ref").textContent = `${v.surahArabic} · ${v.surahEnglish} ${v.ref}${
       v.juz ? " · Juz " + v.juz : ""
     }`;
   } else {
-    $("arabic").style.display = "none";
-    $("quote").style.display = "none";
     $("ref").style.display = "none";
   }
 

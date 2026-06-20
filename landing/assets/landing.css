@@ -258,6 +258,8 @@ body {
 .vtable a { color: var(--gold-soft); text-decoration: none; }
 .vtable a:hover { text-decoration: underline; }
 .vtable .muted-cell { color: var(--ink-faint); }
+.vtable tr.ver-disabled { opacity: 0.5; }
+.vtable tr.ver-disabled td { color: var(--ink-faint); }
 .tag { font-size: 0.68rem; background: rgba(240, 192, 104, 0.18); color: var(--gold-soft); border: 1px solid rgba(240, 192, 104, 0.35); padding: 2px 7px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
 .versions-note { text-align: center; color: var(--ink-faint); font-size: 0.88rem; margin-top: 20px; }
 .versions-note a { color: var(--gold-soft); text-decoration: none; }
