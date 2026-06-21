@@ -251,8 +251,11 @@ body {
 .versions { max-width: 1000px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 5vw, 64px); }
 .vtable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); backdrop-filter: blur(10px); }
 .vtable { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-.vtable th, .vtable td { text-align: center; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+.vtable th, .vtable td { text-align: center; padding: 13px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; vertical-align: middle; }
 .vtable th:first-child, .vtable td:first-child { text-align: left; }
+/* only the Notes column may wrap */
+.vtable th:last-child, .vtable td:last-child { white-space: normal; min-width: 16rem; text-align: left; }
+.tag { white-space: nowrap; }
 .vtable th { color: var(--ink-faint); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
 .vtable tr:last-child td { border-bottom: none; }
 .vtable a { color: var(--gold-soft); text-decoration: none; }
